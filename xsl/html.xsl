@@ -170,14 +170,14 @@
 
     <xsl:template match="r:address">
         <div>
-            <xsl:for-each select="r:streetAddress">
+            <xsl:for-each select="r:street">
                 <xsl:value-of select="."/><br/>
             </xsl:for-each>
             <xsl:value-of select="r:locality"/>
             <xsl:text>, </xsl:text>
             <xsl:value-of select="r:region"/>
             <xsl:text> </xsl:text>
-            <xsl:value-of select="r:postalCode"/>
+            <xsl:value-of select="r:postcode"/>
             <xsl:text> </xsl:text>
             <xsl:value-of select="r:country"/>
         </div>

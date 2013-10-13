@@ -1,14 +1,14 @@
 xml-resume
 ==========
 
-An XML storage format with XSLT stylesheets for formatting
+An XML vocabulary with XSLT stylesheets for formatting
 
-Schema validation
-=================
+Validate
+========
 
     xmllint --noout --schema schema/resume.xsd myresume.xml
 
-HTML generation
-===============
+Generate HTML
+=============
 
     xsltproc xsl/html.xsl myresume.xml > myresume.html

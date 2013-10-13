@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns="http://bmats.co/xml-resume/v0"
-           targetNamespace="http://bmats.co/xml-resume/v0"
+           xmlns="http://bmats.co/xml-resume/0"
+           targetNamespace="http://bmats.co/xml-resume/0"
            version="0.1 (20131013)"
            elementFormDefault="qualified">
     <xs:element name="resume" type="Resume"/>

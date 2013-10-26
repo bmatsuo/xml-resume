@@ -88,8 +88,9 @@
         .section .header h4 {
             border-bottom: 0px;
             padding-bottom: 0px;
-            margin-top: 0px;
             padding-bottom: 0px;
+            margin-top: 0px;
+            margin-bottom: 2px;
         }
 
         .header .list-unstyled {
@@ -113,9 +114,9 @@
         }
 
         .section .row {
-            margin-top: 0px;
+            margin-top: 3px;
             padding-top: 0px;
-            margin-bottom: 5px;
+            margin-bottom: 0px;
         }
 
         .section .row.list.category { margin-bottom: 3px; }
@@ -312,11 +313,14 @@
                 <div class="row marketing item">
                     <div class="row header">
                         <div class="col-sm-8 col-md-8 col-lg-8">
-                            <strong><xsl:value-of select="r:employer"/></strong>
+                            <strong><xsl:value-of select="r:position"/></strong>
                         </div>
-                        <div class="col-sm-4 col-md-4 col-lg-4 offset-md-1 offset-md-1">
+                        <span class="col-sm-8 col-md-8 col-lg-8">
+                            <xsl:value-of select="r:employer"/>
+                        </span>
+                        <span class="col-sm-4 col-md-4 col-lg-4 offset-md-1 offset-md-1">
                             <xsl:apply-templates select="r:dates"/>
-                        </div>
+                        </span>
                     </div>
                     <div class="row marketing">
                         <xsl:for-each select="r:description/r:para">

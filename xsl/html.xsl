@@ -119,7 +119,9 @@
             margin-bottom: 0px;
         }
 
-        .section .row.list.category { margin-bottom: 3px; }
+        .section .list .category { margin-bottom: 3px; }
+
+        .section .list .items { margin-bottom: 3px; }
 
         .print {
             display: none;
@@ -257,14 +259,14 @@
             <div class="row marketing header">
                 <h4>Skills</h4>
             </div>
-            <div class="row marketing">
+            <div class="row marketing list">
                 <xsl:for-each select="r:skills">
-                    <div class="row marketing list category">
-                        <xsl:if test="count(@category) != 0">
+                    <xsl:if test="count(@category) != 0">
+                        <div class="row marketing category">
                             <strong><xsl:value-of select="@category"/></strong>
-                        </xsl:if>
-                    </div>
-                    <div class="row marketing list">
+                        </div>
+                    </xsl:if>
+                    <div class="row marketing items">
                         <xsl:for-each select="r:skill">
                             <xsl:value-of select="."/>
                             <xsl:if test="position() != last()">
@@ -282,16 +284,16 @@
             <div class="row marketing section header">
                 <h4>Interests</h4>
             </div>
-            <div class="row marketing">
+            <div class="row marketing list">
                 <xsl:for-each select="r:interests">
-                    <div class="row marketing list category">
-                        <xsl:if test="count(@category) != 0">
+                    <xsl:if test="count(@category) != 0">
+                        <div class="row marketing category">
                             <strong><xsl:value-of select="@category"/></strong>
-                        </xsl:if>
-                    </div>
-                    <div class="row marketing list">
+                        </div>
+                    </xsl:if>
+                    <div class="row marketing items">
                         <xsl:for-each select="r:interest">
-                            <span><xsl:value-of select="."/></span>
+                            <xsl:value-of select="."/>
                             <xsl:if test="position() != last()">
                                 <xsl:text>, </xsl:text>
                             </xsl:if>

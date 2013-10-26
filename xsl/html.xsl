@@ -189,11 +189,11 @@
 
     <xsl:template match="r:header">
         <div class="row header">
-            <span class="col-sm-7 col-md-7 col-lg-7">
+            <span class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
                 <h2><xsl:value-of select="r:name"/></h2>
                 <strong><xsl:value-of select="r:contact/r:email"/></strong>
             </span>
-            <span class="col-sm-5 col-md-5 col-lg-5 offset-md-1 offset-lg-1">
+            <span class="col-xs-5 col-sm-5 col-md-5 col-lg-5 offset-md-1 offset-lg-1">
                 <xsl:apply-templates select="r:contact"/>
             </span>
         </div>

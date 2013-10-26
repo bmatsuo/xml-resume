@@ -85,12 +85,25 @@
             margin-bottom: 5px;
         }
 
-        .section .header h3 {
+        .section .header h4 {
             border-bottom: 0px;
-            padding-bottom: 5px;
+            padding-bottom: 0px;
+            margin-top: 0px;
+            padding-bottom: 0px;
         }
 
-        .section .item p { margin-top: 5px; }
+        .header .list-unstyled {
+            margin-top: 10px;
+        }
+
+        .header h2 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .section p { margin-bottom: 5px; }
+
+        .section .item p { margin-top: 0px; }
 
         .section .item .header { margin-bottom: 5px; }
 
@@ -102,9 +115,35 @@
         .section .row {
             margin-top: 0px;
             padding-top: 0px;
+            margin-bottom: 5px;
         }
 
-        .section .row.list.category { margin-bottom: 10px; }
+        .section .row.list.category { margin-bottom: 3px; }
+
+        .print {
+            display: none;
+        }
+
+        @media print {
+            body {
+                padding-top: 0px;
+                padding-bottom: 0px;
+                font-size: 10pt;
+            }
+
+            span, .marketing, .header {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+
+            .noprint {
+                display: none;
+            }
+
+            .print {
+                display: block;
+            }
+        }
     </xsl:variable>
 
     <!-- An html5 shell for all instance document content -->
@@ -121,6 +160,7 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                 <title>Resume</title>
                 <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+                <link rel="stylesheet" type="text/css" media="print" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
                 <style type="text/css">
                     <xsl:value-of select="$jumbotron-narrow-css"/>
                     <xsl:value-of select="$resume-css"/>
@@ -148,6 +188,7 @@
         <div class="row header">
             <span class="col-sm-7 col-md-7 col-lg-7">
                 <h2><xsl:value-of select="r:name"/></h2>
+                <strong><xsl:value-of select="r:contact/r:email"/></strong>
             </span>
             <span class="col-sm-5 col-md-5 col-lg-5 offset-md-1 offset-lg-1">
                 <xsl:apply-templates select="r:contact"/>
@@ -156,14 +197,22 @@
     </xsl:template>
 
     <xsl:template match="r:contact">
-        <ul class="list-unstyled">
-            <li><xsl:value-of select="r:email"/></li>
+        <ul class="noprint list-unstyled">
             <li><xsl:value-of select="r:phone"/></li>
             <xsl:for-each select="r:address">
                 <li><xsl:apply-templates select="."/></li>
             </xsl:for-each>
             <xsl:for-each select="r:link">
                 <li><xsl:apply-templates select="."/></li>
+            </xsl:for-each>
+        </ul>
+        <ul class="print list-unstyled">
+            <li><xsl:value-of select="r:phone"/></li>
+            <xsl:for-each select="r:address">
+                <li><xsl:apply-templates select="."/></li>
+            </xsl:for-each>
+            <xsl:for-each select="r:link">
+                <li><xsl:value-of select="@href"/></li>
             </xsl:for-each>
         </ul>
     </xsl:template>
@@ -190,7 +239,7 @@
     <xsl:template match="r:objective">
         <div class="section">
             <div class="row marketing header">
-                <h3 class="compact">Objective</h3>
+                <h4 class="compact">Objective</h4>
             </div>
             <div class="row marketing">
                 <div class="row marketing"><!-- this redundancy kind of sucks -->
@@ -205,7 +254,7 @@
     <xsl:template name="skills">
         <div class="section">
             <div class="row marketing header">
-                <h3>Skills</h3>
+                <h4>Skills</h4>
             </div>
             <div class="row marketing">
                 <xsl:for-each select="r:skills">
@@ -230,7 +279,7 @@
     <xsl:template name="interests">
         <div class="section">
             <div class="row marketing section header">
-                <h3>Interests</h3>
+                <h4>Interests</h4>
             </div>
             <div class="row marketing">
                 <xsl:for-each select="r:interests">
@@ -257,7 +306,7 @@
     <xsl:template match="r:history">
         <div class="section">
             <div class="row marketing section header">
-                <h3>Employment</h3>
+                <h4>Employment</h4>
             </div>
             <xsl:for-each select="r:employment">
                 <div class="row marketing item">
@@ -280,7 +329,7 @@
 
         <div class="section">
             <div class="row marketing section header">
-                <h3>Academic</h3>
+                <h4>Academic</h4>
             </div>
             <xsl:for-each select="r:academic">
                 <div class="row marketing item">

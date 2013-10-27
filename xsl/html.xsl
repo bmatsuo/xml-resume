@@ -379,6 +379,6 @@
     </xsl:template>
 
     <xsl:template match="r:dates">
-        <i>(<xsl:value-of select="@from"/> - <xsl:value-of select="@to"/>)</i>
+        <i><xsl:value-of select="@from"/> - <xsl:value-of select="@to"/></i>
     </xsl:template>
 </xsl:stylesheet>

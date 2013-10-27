@@ -34,6 +34,6 @@ The schema is simplified and focused. It is using a (more) modern W3C XML Schema
 (XSD) instead of a DTD. It is streamlined to allow for maximal readability and
 maintainability.
 
-The HTML output is also modern HTML5 with responsive styling à la Bootstrap.
+The HTML output is also modern, HTML5 with responsive styling à la Bootstrap.
 
 GitHub is better than SourceForge.

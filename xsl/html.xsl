@@ -193,7 +193,7 @@
                 <h2><xsl:value-of select="r:name"/></h2>
                 <strong><xsl:value-of select="r:contact/r:email"/></strong>
             </span>
-            <span class="col-xs-5 col-sm-5 col-md-5 col-lg-5 offset-md-1 offset-lg-1">
+            <span class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xs-3 col-sm-1 offset-md-1 offset-lg-1">
                 <xsl:apply-templates select="r:contact"/>
             </span>
         </div>
@@ -206,7 +206,10 @@
                 <li><xsl:apply-templates select="."/></li>
             </xsl:for-each>
             <xsl:for-each select="r:link">
-                <li><xsl:apply-templates select="."/></li>
+                <li class="hidden-xs"><xsl:apply-templates select="." mode="standard"/></li>
+                <li class="visible-xs">
+                    <xsl:apply-templates select="." mode="mobile"/>
+                </li>
             </xsl:for-each>
         </ul>
         <ul class="print list-unstyled">
@@ -215,7 +218,7 @@
                 <li><xsl:apply-templates select="."/></li>
             </xsl:for-each>
             <xsl:for-each select="r:link">
-                <li><xsl:value-of select="@href"/></li>
+                <li><xsl:apply-templates select="." mode="print"/></li>
             </xsl:for-each>
         </ul>
     </xsl:template>
@@ -235,8 +238,16 @@
         </div>
     </xsl:template>
 
-    <xsl:template match="r:link">
+    <xsl:template match="r:link" mode="standard">
         <a href="{@href}" title="{.}"><xsl:value-of select="@href"/></a>
+    </xsl:template>
+
+    <xsl:template match="r:link" mode="mobile">
+        <a href="{@href}" title="{.}"><xsl:value-of select="."/></a>
+    </xsl:template>
+
+    <xsl:template match="r:link" mode="print">
+        <xsl:value-of select="@href"/>
     </xsl:template>
 
     <xsl:template match="r:objective">
@@ -317,10 +328,10 @@
                         <div class="col-sm-8 col-md-8 col-lg-8">
                             <strong><xsl:value-of select="r:position"/></strong>
                         </div>
-                        <span class="col-sm-8 col-md-8 col-lg-8">
+                        <span class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                             <xsl:value-of select="r:employer"/>
                         </span>
-                        <span class="col-sm-4 col-md-4 col-lg-4 offset-md-1 offset-md-1">
+                        <span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 offset-md-1 offset-md-1">
                             <xsl:apply-templates select="r:dates"/>
                         </span>
                     </div>
@@ -340,12 +351,12 @@
             <xsl:for-each select="r:academic">
                 <div class="row marketing item">
                     <div class="row header">
-                        <div class="col-sm-8 col-md-8 col-lg-8">
+                        <span class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                             <strong><xsl:value-of select="r:institution"/></strong>
-                        </div>
-                        <div class="col-sm-4 col-md-4 col-lg-4">
+                        </span>
+                        <span class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                             <xsl:apply-templates select="r:dates"/>
-                        </div>
+                        </span>
                     </div>
                     <div class="row marketing">
                         <ul class="list-unstyled">

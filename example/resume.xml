@@ -7,6 +7,7 @@
         <name>Trevor Philips</name>
         <contact>
             <email>t.revor@lifeinvader.com</email>
+            <phone>+1 555 555 5555</phone>
             <address>
                 <street>1218 Palmas Blvd</street>
                 <street>APT 4</street>
@@ -24,15 +25,18 @@
             I want to make money. I don't care what I have to do.
         </para>
         <para>
-            Danger. Distruction. Maybe someones Death. Fuck it.
+            Danger. Destruction. Maybe someones Death. Fuck it.
             Just show me the money.
         </para>
     </objective>
-    <skills>
+    <skills category="things">
         <skill>Firearms</skill>
         <skill>Explosives</skill>
         <skill>Planes</skill>
         <skill>Helicopters</skill>
+    </skills>
+    <skills category="other things">
+        <skill>Phalandering</skill>
     </skills>
     <interests>
         <interest>Money</interest>
@@ -47,15 +51,20 @@
             <dates from="Oct 2013" to="Oct 2013"/>
             <description>
                 <para>
+                    I shot some shit.
                 </para>
             </description>
         </employment>
         <employment>
-            <position></position>
+            <position>Gopher</position>
             <employer>Federal Investigation Bureau</employer>
             <dates from="Oct 2013" to="Oct 2013"/>
             <description>
                 <para>
+                    I did some fucked up shit for those assholes.
+                </para>
+                <para>
+                    To top it off I never got paid a fucking dime.
                 </para>
             </description>
         </employment>

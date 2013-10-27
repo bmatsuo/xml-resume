@@ -97,6 +97,15 @@
             margin-top: 10px;
         }
 
+        .list-inline.dates {
+            margin-bottom: 0px;
+        }
+
+        .list-inline.dates li {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
         .header h2 {
             margin-top: 10px;
             margin-bottom: 5px;
@@ -328,10 +337,10 @@
                         <div class="col-sm-8 col-md-8 col-lg-8">
                             <strong><xsl:value-of select="r:position"/></strong>
                         </div>
-                        <span class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        <span class="col-xs-7 col-sm-8 col-md-8 col-lg-8">
                             <xsl:value-of select="r:employer"/>
                         </span>
-                        <span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 offset-md-1 offset-md-1">
+                        <span class="col-xs-5 col-sm-4 col-md-4 col-lg-4 offset-md-1 offset-md-1">
                             <xsl:apply-templates select="r:dates"/>
                         </span>
                     </div>
@@ -351,10 +360,10 @@
             <xsl:for-each select="r:academic">
                 <div class="row marketing item">
                     <div class="row header">
-                        <span class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        <span class="col-xs-7 col-sm-8 col-md-8 col-lg-8">
                             <strong><xsl:value-of select="r:institution"/></strong>
                         </span>
-                        <span class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <span class="col-xs-5 col-sm-4 col-md-4 col-lg-4 offset-md-1 offset-md-1">
                             <xsl:apply-templates select="r:dates"/>
                         </span>
                     </div>
@@ -379,6 +388,10 @@
     </xsl:template>
 
     <xsl:template match="r:dates">
-        <i><xsl:value-of select="@from"/> - <xsl:value-of select="@to"/></i>
+        <ul class="list-inline dates">
+            <li><i><xsl:value-of select="@from"/></i></li>
+            <li>-</li>
+            <li><i><xsl:value-of select="@to"/></i></li>
+        </ul>
     </xsl:template>
 </xsl:stylesheet>

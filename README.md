@@ -35,3 +35,5 @@ The schema is simplified and focused. It is using a (more) modern W3C XML Schema
 maintainability.
 
 The HTML output is also modern HTML5 with responsive styling à la Bootstrap.
+
+GitHub is better than SourceForge.

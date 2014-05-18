@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://bmats.co/xml-resume/0/xsl/html.xsl"?>
+<resume xmlns="http://bmats.co/xml-resume/0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://bmats.co/xml-resume/0 http://bmats.co/xml-resume/0/schema/resume.xsd">
+    <header>
+        <name>Trevor Philips</name>
+        <contact>
+            <email>t.revor@lifeinvader.com</email>
+            <address>
+                <street>1218 Palmas Blvd</street>
+                <street>APT 4</street>
+                <locality>Vespucci Beach</locality>
+                <region>CA</region>
+                <postcode>73452</postcode>
+                <country>USA</country>
+            </address>
+            <link href="https://example.com/lifeinvader">Life Invader</link>
+            <link href="https://linkedin.com/in/trevorphilps">LinkedIn</link>
+        </contact>
+    </header>
+    <objective>
+        <para>
+            I want to make money. I don't care what I have to do.
+        </para>
+        <para>
+            Danger. Distruction. Maybe someones Death. Fuck it.
+            Just show me the money.
+        </para>
+    </objective>
+    <skills>
+        <skill>Firearms</skill>
+        <skill>Explosives</skill>
+        <skill>Planes</skill>
+        <skill>Helicopters</skill>
+    </skills>
+    <interests>
+        <interest>Money</interest>
+        <interest>Drugs</interest>
+        <interest>Alcohol</interest>
+        <interest>Deviancy</interest>
+    </interests>
+    <history>
+        <employment>
+            <position>Gun Man</position>
+            <employer>Self employed</employer>
+            <dates from="Oct 2013" to="Oct 2013"/>
+            <description>
+                <para>
+                </para>
+            </description>
+        </employment>
+        <employment>
+            <position></position>
+            <employer>Federal Investigation Bureau</employer>
+            <dates from="Oct 2013" to="Oct 2013"/>
+            <description>
+                <para>
+                </para>
+            </description>
+        </employment>
+        <academic>
+            <institution>Los Santos Halfway House and Night School</institution>
+            <dates from="Sep 1998" to="Mar 2010"/>
+            <concentration type="major">
+                <subject>School</subject>
+                <degree>G.E.D.</degree>
+            </concentration>
+            <achievement>
+                <title>Most likely to deal heroin again in the future</title>
+            </achievement>
+        </academic>
+    </history>
+</resume>
